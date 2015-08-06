@@ -1,0 +1,11 @@
+[{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像1","iconFilename":"userIcon_01","keyId":1,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像2","iconFilename":"userIcon_02","keyId":2,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像3","iconFilename":"userIcon_03","keyId":3,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像4","iconFilename":"userIcon_04","keyId":4,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像5","iconFilename":"userIcon_05","keyId":5,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像6","iconFilename":"userIcon_06","keyId":6,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像7","iconFilename":"userIcon_07","keyId":7,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"免费","desc":"头像8","iconFilename":"userIcon_08","keyId":8,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":101,"conditionParamList":["10"],"conditionsDesc":"等级升至10级可解锁","desc":"头像9","iconFilename":"userIcon_09","keyId":9,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":102,"conditionParamList":["2"],"conditionsDesc":"VIP等级升至2级可解锁","desc":"头像10","iconFilename":"userIcon_10","keyId":10,"requireMoneyCount":0,"requireMoneyType":10000001}, 
+{"condition":0,"conditionParamList":["0"],"conditionsDesc":"消费10000金币可解锁，是否购买？","desc":"头像11","iconFilename":"userIcon_11","keyId":11,"requireMoneyCount":10000,"requireMoneyType":10000001}]

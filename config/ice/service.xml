@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 抽象handler -->
+	<bean id="abstractEvent2MessageHandler" class="com.cwa.server.logic.module.AEvent2MessageHandler" abstract="true">
+	     <property name="logicContext" ref="logicService" />
+	</bean>
+	<bean id="protoEventHandler" class="com.cwa.server.logic.event.ProtoEventHandler" >
+		<property name="logicContext" ref="logicService" />
+	</bean>
+	
+	<bean id="matchRoomSucceedEventHandler" class="com.cwa.server.logic.module.room.event.MatchRoomSucceedEventHandler" parent="abstractEvent2MessageHandler">
+	</bean>
+	<bean id="matchRoomOutTimeEventHandler" class="com.cwa.server.logic.module.room.event.MatchRoomOutTimeEventHandler" parent="abstractEvent2MessageHandler">
+	</bean>
+	<bean id="userStateChangeEventHandler" class="com.cwa.server.logic.module.room.event.UserStateChangeEventHandler" parent="abstractEvent2MessageHandler">
+	</bean>
+	<bean id="newRegionDBEventHandler" class="com.cwa.server.logic.event.NewRegionDBEventHandler">
+		<property name="logicContext" ref="logicService" />
+	</bean>
+	
+	<bean id="eventHandlerMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+			    <entry key="serverice.proto.ProtoEvent" value-ref="protoEventHandler" />
+			    <entry key="serverice.room.MatchRoomSucceedEvent" value-ref="matchRoomSucceedEventHandler" />
+			    <entry key="serverice.room.MatchRoomOutTimeEvent" value-ref="matchRoomOutTimeEventHandler" />
+			    <entry key="serverice.room.UserStateChangeEvent" value-ref="userStateChangeEventHandler" />
+			     <entry key="serverice.config.NewRegionDBEvent" value-ref="newRegionDBEventHandler" />
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="closeSessionHandlerList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="sessionCloseHandler" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="constantManager" class="com.cwa.server.logic.module.constant.ConstantManager"  >
+		<property name="gloabalContext" ref="serverService" />
+	</bean>
+	
+	<!-- ice service实现类 -->
+	<bean id="logicServiceI" class="com.cwa.server.logic.service.LogicServiceI">
+		<property name="logicService" ref="logicService" />
+	</bean>
+
+	<bean id="eventListenerI" class="com.cwa.component.event.ice.EventListenerI">
+		<property name="eventHandlerMap" ref="eventHandlerMap" />
+	</bean>
+
+	<bean id="serviceImplMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<!-- {serviceName:serviceI} -->
+				<entry key="IEventListener" value-ref="eventListenerI" />
+				<entry key="ILogicService" value-ref="logicServiceI" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<!--启动后操作 -->
+	<bean id="logicService" class="com.cwa.server.logic.LogicService">
+		<property name="constantManager" ref="constantManager" />
+	</bean>
+</beans>

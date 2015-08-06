@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!-- 抽象handler -->
+	<bean id="abstractGameHandler" class="com.cwa.server.logic.module.IGameHandler" abstract="true">
+	        <property name="logicContext" ref="logicService" />
+	</bean>
+	<!-- session关闭处理 -->
+	<bean id="sessionCloseHandler" class="com.cwa.server.logic.module.user.SessionCloseHandler" >
+	</bean>
+	
+	<bean id="userLoginUpHandler" class="com.cwa.server.logic.module.user.handler.UserLoginUpHandler2" parent="abstractGameHandler"/>
+	<bean id="userLogoutUpHandler" class="com.cwa.server.logic.module.user.handler.UserLogoutUpHandler" parent="abstractGameHandler"/>
+	<bean id="getUserinfoUpHandler" class="com.cwa.server.logic.module.user.handler.GetUserinfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="changeUserNameUpHandler" class="com.cwa.server.logic.module.user.handler.ChangeUserNameUpHandler" parent="abstractGameHandler"/>
+	<bean id="changeUserIconUpHandler" class="com.cwa.server.logic.module.user.handler.ChangeUserIconUpHandler" parent="abstractGameHandler"/>
+	<bean id="changeUserStateUpHandler" class="com.cwa.server.logic.module.user.handler.ChangeUserStateUpHandler" parent="abstractGameHandler"/>
+	<bean id="getAllItemInfoUpHandler" class="com.cwa.server.logic.module.item.handler.GetAllItemInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="useItemUpHandler" class="com.cwa.server.logic.module.item.handler.UseItemUpHandler" parent="abstractGameHandler"/>
+	<bean id="combineItemUpHandler" class="com.cwa.server.logic.module.item.handler.CombineItemUpHandler" parent="abstractGameHandler"/>
+	<bean id="getRoomsUpHandler" class="com.cwa.server.logic.module.room.handler.GetRoomsUpHandler" parent="abstractGameHandler"/>
+	<bean id="createRoomUpHandler" class="com.cwa.server.logic.module.room.handler.CreateRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="joinRoomUpHandler" class="com.cwa.server.logic.module.room.handler.JoinRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="readyUpHandler" class="com.cwa.server.logic.module.room.handler.ReadyUpHandler" parent="abstractGameHandler"/>
+	<bean id="cancelReadyUpHandler" class="com.cwa.server.logic.module.room.handler.CancelReadyUpHandler" parent="abstractGameHandler"/>
+	<bean id="exitRoomUpHandler" class="com.cwa.server.logic.module.room.handler.ExitRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="matchupRoomUpHandler" class="com.cwa.server.logic.module.room.handler.MatchupRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="cancelMatchupRoomUpHandler" class="com.cwa.server.logic.module.room.handler.CancelMatchupRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="getRoomInfoUpHandler" class="com.cwa.server.logic.module.room.handler.GetRoomInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="quickJoinRoomUpHandler" class="com.cwa.server.logic.module.room.handler.QuickJoinRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="kickOutUpHandler" class="com.cwa.server.logic.module.room.handler.KickOutUpHandler" parent="abstractGameHandler"/>
+	<bean id="fightHeroUpHandler" class="com.cwa.server.logic.module.room.handler.FightHeroUpHandler" parent="abstractGameHandler"/>
+	<bean id="matchupOutTimeUpHandler" class="com.cwa.server.logic.module.room.handler.MatchupOutTimeUpHandler" parent="abstractGameHandler"/>
+	<bean id="getUserRoomUpHandler" class="com.cwa.server.logic.module.room.handler.GetUserRoomUpHandler" parent="abstractGameHandler"/>
+	<bean id="getHeroInfoUpHandler" class="com.cwa.server.logic.module.hero.handler.GetHeroInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="useHeroBookUpHandler" class="com.cwa.server.logic.module.hero.handler.UseHeroBookUpHandler" parent="abstractGameHandler"/>
+	<bean id="callHeroUpHandler" class="com.cwa.server.logic.module.hero.handler.CallHeroUpHandler" parent="abstractGameHandler"/>
+	<bean id="heroEvolutionUpHandler" class="com.cwa.server.logic.module.hero.handler.HeroEvolutionUpHandler" parent="abstractGameHandler"/>
+	<bean id="heroTrainUpHandler" class="com.cwa.server.logic.module.hero.handler.HeroTrainUpHandler" parent="abstractGameHandler"/>
+	<bean id="saveTrainPatienceUpHandler" class="com.cwa.server.logic.module.hero.handler.SaveTrainPatienceUpHandler" parent="abstractGameHandler"/>
+	<bean id="cancelTrainPatienceUpHandler" class="com.cwa.server.logic.module.hero.handler.CancelTrainPatienceUpHandler" parent="abstractGameHandler"/>
+	<bean id="getUserEconomyUpHandler" class="com.cwa.server.logic.module.economy.handler.GetUserEconomyUpHandler" parent="abstractGameHandler"/>
+	<bean id="exchangeMoneyUpHandler" class="com.cwa.server.logic.module.economy.handler.ExchangeMoneyUpHandler" parent="abstractGameHandler"/>
+	<bean id="getEquipmentInfoUpHandler" class="com.cwa.server.logic.module.equipment.handler.GetEquipmentInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="upgradeEquipmentLevelUpHandler" class="com.cwa.server.logic.module.equipment.handler.UpgradeEquipmentLevelUpHandler" parent="abstractGameHandler"/>
+	<bean id="upgradeEquipmentQualityUpHandler" class="com.cwa.server.logic.module.equipment.handler.UpgradeEquipmentQualityUpHandler" parent="abstractGameHandler"/>
+	<bean id="putonPluginUpHandler" class="com.cwa.server.logic.module.equipment.handler.PutonPluginUpHandler" parent="abstractGameHandler"/>
+	<bean id="dischargePlugUpHandler" class="com.cwa.server.logic.module.equipment.handler.DischargePlugUpHandler" parent="abstractGameHandler"/>
+	<bean id="refinePlugUpHandler" class="com.cwa.server.logic.module.equipment.handler.RefinePlugUpHandler" parent="abstractGameHandler"/>
+	<bean id="getAllFormationInfoUpHandler" class="com.cwa.server.logic.module.formation.handler.GetAllFormationInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="getFormationDetailInfoUpHandler" class="com.cwa.server.logic.module.formation.handler.GetFormationDetailInfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="setFormationUpHandler" class="com.cwa.server.logic.module.formation.handler.SetFormationUpHandler" parent="abstractGameHandler"/>
+	<bean id="getVipinfoUpHandler" class="com.cwa.server.logic.module.vip.handler.GetVipinfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="getMatchinfoUpHandler" class="com.cwa.server.logic.module.match.handler.GetMatchinfoUpHandler" parent="abstractGameHandler"/>
+	<bean id="matchStartUpHandler" class="com.cwa.server.logic.module.match.handler.MatchStartUpHandler" parent="abstractGameHandler"/>
+	<bean id="matchOverUpHandler" class="com.cwa.server.logic.module.match.handler.MatchOverUpHandler" parent="abstractGameHandler"/>
+	<bean id="matchMopupUpHandler" class="com.cwa.server.logic.module.match.handler.MatchMopupUpHandler" parent="abstractGameHandler"/>
+	<bean id="buyGoodsUpHandler" class="com.cwa.server.logic.module.match.handler.BuyGoodsUpHandler" parent="abstractGameHandler"/>
+	<bean id="buyPowerUpHandler" class="com.cwa.server.logic.module.match.handler.BuyPowerUpHandler" parent="abstractGameHandler"/>
+	<bean id="resetMatchCountUpHandler" class="com.cwa.server.logic.module.match.handler.ResetMatchCountUpHandler" parent="abstractGameHandler"/>
+	<bean id="getStarAwardUpHandler" class="com.cwa.server.logic.module.match.handler.GetStarAwardUpHandler" parent="abstractGameHandler"/>
+	<bean id="refreshMatchShopUpHandler" class="com.cwa.server.logic.module.match.handler.RefreshMatchShopUpHandler" parent="abstractGameHandler"/>
+	<bean id="buyAllGoodsUpHandler" class="com.cwa.server.logic.module.match.handler.BuyAllGoodsUpHandler" parent="abstractGameHandler"/>
+	
+	<bean id="userLoginUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100003" />
+		<property name="message" value="com.cwa.message.UserMessage$UserLoginUp" />
+		<property name="messageHandler" ref="userLoginUpHandler" />
+	</bean>
+	<bean id="userLoginDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100004" />
+		<property name="message" value="com.cwa.message.UserMessage$UserLoginDown" />
+	</bean>
+	<bean id="userLogoutUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100005" />
+		<property name="message" value="com.cwa.message.UserMessage$UserLogoutUp" />
+		<property name="messageHandler" ref="userLogoutUpHandler" />
+	</bean>
+	<bean id="getUserinfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100007" />
+		<property name="message" value="com.cwa.message.UserMessage$GetUserinfoUp" />
+		<property name="messageHandler" ref="getUserinfoUpHandler" />
+	</bean>
+	<bean id="getUserinfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100008" />
+		<property name="message" value="com.cwa.message.UserMessage$GetUserinfoDown" />
+	</bean>
+	<bean id="changeUserNameUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100009" />
+		<property name="message" value="com.cwa.message.UserMessage$ChangeUserNameUp" />
+		<property name="messageHandler" ref="changeUserNameUpHandler" />
+	</bean>
+	<bean id="changeUserIconUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100011" />
+		<property name="message" value="com.cwa.message.UserMessage$ChangeUserIconUp" />
+		<property name="messageHandler" ref="changeUserIconUpHandler" />
+	</bean>
+	<bean id="changeUserStateUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100013" />
+		<property name="message" value="com.cwa.message.UserMessage$ChangeUserStateUp" />
+		<property name="messageHandler" ref="changeUserStateUpHandler" />
+	</bean>
+	<bean id="getAllItemInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100101" />
+		<property name="message" value="com.cwa.message.ItemMessage$GetAllItemInfoUp" />
+		<property name="messageHandler" ref="getAllItemInfoUpHandler" />
+	</bean>
+	<bean id="getAllItemInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100102" />
+		<property name="message" value="com.cwa.message.ItemMessage$GetAllItemInfoDown" />
+	</bean>
+	<bean id="useItemUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100103" />
+		<property name="message" value="com.cwa.message.ItemMessage$UseItemUp" />
+		<property name="messageHandler" ref="useItemUpHandler" />
+	</bean>
+	<bean id="useItemDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100104" />
+		<property name="message" value="com.cwa.message.ItemMessage$UseItemDown" />
+	</bean>
+	<bean id="combineItemUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100105" />
+		<property name="message" value="com.cwa.message.ItemMessage$CombineItemUp" />
+		<property name="messageHandler" ref="combineItemUpHandler" />
+	</bean>
+	<bean id="getRoomsUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100201" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetRoomsUp" />
+		<property name="messageHandler" ref="getRoomsUpHandler" />
+	</bean>
+	<bean id="getRoomsDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100202" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetRoomsDown" />
+	</bean>
+	<bean id="createRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100203" />
+		<property name="message" value="com.cwa.message.RoomMessage$CreateRoomUp" />
+		<property name="messageHandler" ref="createRoomUpHandler" />
+	</bean>
+	<bean id="createRoomDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100204" />
+		<property name="message" value="com.cwa.message.RoomMessage$CreateRoomDown" />
+	</bean>
+	<bean id="joinRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100205" />
+		<property name="message" value="com.cwa.message.RoomMessage$JoinRoomUp" />
+		<property name="messageHandler" ref="joinRoomUpHandler" />
+	</bean>
+	<bean id="joinRoomDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100206" />
+		<property name="message" value="com.cwa.message.RoomMessage$JoinRoomDown" />
+	</bean>
+	<bean id="userStateChangeDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100208" />
+		<property name="message" value="com.cwa.message.RoomMessage$UserStateChangeDown" />
+	</bean>
+	<bean id="readyUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100209" />
+		<property name="message" value="com.cwa.message.RoomMessage$ReadyUp" />
+		<property name="messageHandler" ref="readyUpHandler" />
+	</bean>
+	<bean id="cancelReadyUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100211" />
+		<property name="message" value="com.cwa.message.RoomMessage$CancelReadyUp" />
+		<property name="messageHandler" ref="cancelReadyUpHandler" />
+	</bean>
+	<bean id="exitRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100213" />
+		<property name="message" value="com.cwa.message.RoomMessage$ExitRoomUp" />
+		<property name="messageHandler" ref="exitRoomUpHandler" />
+	</bean>
+	<bean id="matchupRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100215" />
+		<property name="message" value="com.cwa.message.RoomMessage$MatchupRoomUp" />
+		<property name="messageHandler" ref="matchupRoomUpHandler" />
+	</bean>
+	<bean id="cancelMatchupRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="11002167" />
+		<property name="message" value="com.cwa.message.RoomMessage$CancelMatchupRoomUp" />
+		<property name="messageHandler" ref="cancelMatchupRoomUpHandler" />
+	</bean>
+	<bean id="matchupOutTimeDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100218" />
+		<property name="message" value="com.cwa.message.RoomMessage$MatchupOutTimeDown" />
+	</bean>
+	<bean id="matchupSuccessDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100220" />
+		<property name="message" value="com.cwa.message.RoomMessage$MatchupSuccessDown" />
+	</bean>
+	<bean id="getRoomInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100221" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetRoomInfoUp" />
+		<property name="messageHandler" ref="getRoomInfoUpHandler" />
+	</bean>
+	<bean id="getRoomInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100222" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetRoomInfoDown" />
+	</bean>
+	<bean id="quickJoinRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100223" />
+		<property name="message" value="com.cwa.message.RoomMessage$QuickJoinRoomUp" />
+		<property name="messageHandler" ref="quickJoinRoomUpHandler" />
+	</bean>
+	<bean id="quickJoinRoomDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100224" />
+		<property name="message" value="com.cwa.message.RoomMessage$QuickJoinRoomDown" />
+	</bean>
+	<bean id="kickOutUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100225" />
+		<property name="message" value="com.cwa.message.RoomMessage$KickOutUp" />
+		<property name="messageHandler" ref="kickOutUpHandler" />
+	</bean>
+	<bean id="fightHeroUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100227" />
+		<property name="message" value="com.cwa.message.RoomMessage$FightHeroUp" />
+		<property name="messageHandler" ref="fightHeroUpHandler" />
+	</bean>
+	<bean id="matchupOutTimeUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100229" />
+		<property name="message" value="com.cwa.message.RoomMessage$MatchupOutTimeUp" />
+		<property name="messageHandler" ref="matchupOutTimeUpHandler" />
+	</bean>
+	<bean id="getUserRoomUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100231" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetUserRoomUp" />
+		<property name="messageHandler" ref="getUserRoomUpHandler" />
+	</bean>
+	<bean id="getUserRoomDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100232" />
+		<property name="message" value="com.cwa.message.RoomMessage$GetUserRoomDown" />
+	</bean>
+	<bean id="getHeroInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100301" />
+		<property name="message" value="com.cwa.message.HeroMessage$GetHeroInfoUp" />
+		<property name="messageHandler" ref="getHeroInfoUpHandler" />
+	</bean>
+	<bean id="getHeroInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100302" />
+		<property name="message" value="com.cwa.message.HeroMessage$GetHeroInfoDown" />
+	</bean>
+	<bean id="useHeroBookUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100303" />
+		<property name="message" value="com.cwa.message.HeroMessage$UseHeroBookUp" />
+		<property name="messageHandler" ref="useHeroBookUpHandler" />
+	</bean>
+	<bean id="useHeroBookDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100304" />
+		<property name="message" value="com.cwa.message.HeroMessage$UseHeroBookDown" />
+	</bean>
+	<bean id="callHeroUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100305" />
+		<property name="message" value="com.cwa.message.HeroMessage$CallHeroUp" />
+		<property name="messageHandler" ref="callHeroUpHandler" />
+	</bean>
+	<bean id="heroEvolutionUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100307" />
+		<property name="message" value="com.cwa.message.HeroMessage$HeroEvolutionUp" />
+		<property name="messageHandler" ref="heroEvolutionUpHandler" />
+	</bean>
+	<bean id="heroTrainUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100309" />
+		<property name="message" value="com.cwa.message.HeroMessage$HeroTrainUp" />
+		<property name="messageHandler" ref="heroTrainUpHandler" />
+	</bean>
+	<bean id="heroTrainDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100310" />
+		<property name="message" value="com.cwa.message.HeroMessage$HeroTrainDown" />
+	</bean>
+	<bean id="saveTrainPatienceUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100311" />
+		<property name="message" value="com.cwa.message.HeroMessage$SaveTrainPatienceUp" />
+		<property name="messageHandler" ref="saveTrainPatienceUpHandler" />
+	</bean>
+	<bean id="cancelTrainPatienceUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100313" />
+		<property name="message" value="com.cwa.message.HeroMessage$CancelTrainPatienceUp" />
+		<property name="messageHandler" ref="cancelTrainPatienceUpHandler" />
+	</bean>
+	<bean id="getUserEconomyUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100401" />
+		<property name="message" value="com.cwa.message.EconomyMessage$GetUserEconomyUp" />
+		<property name="messageHandler" ref="getUserEconomyUpHandler" />
+	</bean>
+	<bean id="getUserEconomyDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100402" />
+		<property name="message" value="com.cwa.message.EconomyMessage$GetUserEconomyDown" />
+	</bean>
+	<bean id="exchangeMoneyUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100403" />
+		<property name="message" value="com.cwa.message.EconomyMessage$ExchangeMoneyUp" />
+		<property name="messageHandler" ref="exchangeMoneyUpHandler" />
+	</bean>
+	<bean id="getEquipmentInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100501" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$GetEquipmentInfoUp" />
+		<property name="messageHandler" ref="getEquipmentInfoUpHandler" />
+	</bean>
+	<bean id="getEquipmentInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100502" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$GetEquipmentInfoDown" />
+	</bean>
+	<bean id="upgradeEquipmentLevelUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100503" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$UpgradeEquipmentLevelUp" />
+		<property name="messageHandler" ref="upgradeEquipmentLevelUpHandler" />
+	</bean>
+	<bean id="upgradeEquipmentQualityUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100505" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$UpgradeEquipmentQualityUp" />
+		<property name="messageHandler" ref="upgradeEquipmentQualityUpHandler" />
+	</bean>
+	<bean id="putonPluginUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100507" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$PutonPluginUp" />
+		<property name="messageHandler" ref="putonPluginUpHandler" />
+	</bean>
+	<bean id="dischargePlugUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100509" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$DischargePlugUp" />
+		<property name="messageHandler" ref="dischargePlugUpHandler" />
+	</bean>
+	<bean id="refinePlugUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100511" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$RefinePlugUp" />
+		<property name="messageHandler" ref="refinePlugUpHandler" />
+	</bean>
+	<bean id="refinePlugDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100512" />
+		<property name="message" value="com.cwa.message.EquipmentMessage$RefinePlugDown" />
+	</bean>
+	<bean id="getAllFormationInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100601" />
+		<property name="message" value="com.cwa.message.FormationMessage$GetAllFormationInfoUp" />
+		<property name="messageHandler" ref="getAllFormationInfoUpHandler" />
+	</bean>
+	<bean id="getAllFormationInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100602" />
+		<property name="message" value="com.cwa.message.FormationMessage$GetAllFormationInfoDown" />
+	</bean>
+	<bean id="getFormationDetailInfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100603" />
+		<property name="message" value="com.cwa.message.FormationMessage$GetFormationDetailInfoUp" />
+		<property name="messageHandler" ref="getFormationDetailInfoUpHandler" />
+	</bean>
+	<bean id="getFormationDetailInfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100604" />
+		<property name="message" value="com.cwa.message.FormationMessage$GetFormationDetailInfoDown" />
+	</bean>
+	<bean id="setFormationUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100605" />
+		<property name="message" value="com.cwa.message.FormationMessage$SetFormationUp" />
+		<property name="messageHandler" ref="setFormationUpHandler" />
+	</bean>
+	<bean id="getVipinfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100701" />
+		<property name="message" value="com.cwa.message.VipMessage$GetVipinfoUp" />
+		<property name="messageHandler" ref="getVipinfoUpHandler" />
+	</bean>
+	<bean id="getVipinfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100702" />
+		<property name="message" value="com.cwa.message.VipMessage$GetVipinfoDown" />
+	</bean>
+	<bean id="getMatchinfoUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100801" />
+		<property name="message" value="com.cwa.message.MatchMessage$GetMatchinfoUp" />
+		<property name="messageHandler" ref="getMatchinfoUpHandler" />
+	</bean>
+	<bean id="getMatchinfoDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100802" />
+		<property name="message" value="com.cwa.message.MatchMessage$GetMatchinfoDown" />
+	</bean>
+	<bean id="matchStartUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100803" />
+		<property name="message" value="com.cwa.message.MatchMessage$MatchStartUp" />
+		<property name="messageHandler" ref="matchStartUpHandler" />
+	</bean>
+	<bean id="matchOverUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100805" />
+		<property name="message" value="com.cwa.message.MatchMessage$MatchOverUp" />
+		<property name="messageHandler" ref="matchOverUpHandler" />
+	</bean>
+	<bean id="matchOverDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100806" />
+		<property name="message" value="com.cwa.message.MatchMessage$MatchOverDown" />
+	</bean>
+	<bean id="matchMopupUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100807" />
+		<property name="message" value="com.cwa.message.MatchMessage$MatchMopupUp" />
+		<property name="messageHandler" ref="matchMopupUpHandler" />
+	</bean>
+	<bean id="matchMopupDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100808" />
+		<property name="message" value="com.cwa.message.MatchMessage$MatchMopupDown" />
+	</bean>
+	<bean id="buyGoodsUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100809" />
+		<property name="message" value="com.cwa.message.MatchMessage$BuyGoodsUp" />
+		<property name="messageHandler" ref="buyGoodsUpHandler" />
+	</bean>
+	<bean id="buyGoodsDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100810" />
+		<property name="message" value="com.cwa.message.MatchMessage$BuyGoodsDown" />
+	</bean>
+	<bean id="buyPowerUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100811" />
+		<property name="message" value="com.cwa.message.MatchMessage$BuyPowerUp" />
+		<property name="messageHandler" ref="buyPowerUpHandler" />
+	</bean>
+	<bean id="resetMatchCountUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100813" />
+		<property name="message" value="com.cwa.message.MatchMessage$ResetMatchCountUp" />
+		<property name="messageHandler" ref="resetMatchCountUpHandler" />
+	</bean>
+	<bean id="getStarAwardUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100815" />
+		<property name="message" value="com.cwa.message.MatchMessage$GetStarAwardUp" />
+		<property name="messageHandler" ref="getStarAwardUpHandler" />
+	</bean>
+	<bean id="refreshMatchShopUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100817" />
+		<property name="message" value="com.cwa.message.MatchMessage$RefreshMatchShopUp" />
+		<property name="messageHandler" ref="refreshMatchShopUpHandler" />
+	</bean>
+	<bean id="refreshMatchShopDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100818" />
+		<property name="message" value="com.cwa.message.MatchMessage$RefreshMatchShopDown" />
+	</bean>
+	<bean id="buyAllGoodsUpMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100819" />
+		<property name="message" value="com.cwa.message.MatchMessage$BuyAllGoodsUp" />
+		<property name="messageHandler" ref="buyAllGoodsUpHandler" />
+	</bean>
+	<bean id="buyAllGoodsDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1100820" />
+		<property name="message" value="com.cwa.message.MatchMessage$BuyAllGoodsDown" />
+	</bean>
+	<bean id="lErrorDownMessageConfig" class="com.cwa.message.MessageConfig">
+		<property name="commonId" value="1999001" />
+		<property name="message" value="com.cwa.message.LErrorMessage$LErrorDown" />
+	</bean>
+	
+	
+	<bean id="messageConfigsList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="userLoginUpMessageConfig" />
+				<ref bean="userLoginDownMessageConfig" />
+				<ref bean="userLogoutUpMessageConfig" />
+				<ref bean="getUserinfoUpMessageConfig" />
+				<ref bean="getUserinfoDownMessageConfig" />
+				<ref bean="changeUserNameUpMessageConfig" />
+				<ref bean="changeUserIconUpMessageConfig" />
+				<ref bean="changeUserStateUpMessageConfig" />
+				<ref bean="getAllItemInfoUpMessageConfig" />
+				<ref bean="getAllItemInfoDownMessageConfig" />
+				<ref bean="useItemUpMessageConfig" />
+				<ref bean="useItemDownMessageConfig" />
+				<ref bean="combineItemUpMessageConfig" />
+				<ref bean="getRoomsUpMessageConfig" />
+				<ref bean="getRoomsDownMessageConfig" />
+				<ref bean="createRoomUpMessageConfig" />
+				<ref bean="createRoomDownMessageConfig" />
+				<ref bean="joinRoomUpMessageConfig" />
+				<ref bean="joinRoomDownMessageConfig" />
+				<ref bean="userStateChangeDownMessageConfig" />
+				<ref bean="readyUpMessageConfig" />
+				<ref bean="cancelReadyUpMessageConfig" />
+				<ref bean="exitRoomUpMessageConfig" />
+				<ref bean="matchupRoomUpMessageConfig" />
+				<ref bean="cancelMatchupRoomUpMessageConfig" />
+				<ref bean="matchupOutTimeDownMessageConfig" />
+				<ref bean="matchupSuccessDownMessageConfig" />
+				<ref bean="getRoomInfoUpMessageConfig" />
+				<ref bean="getRoomInfoDownMessageConfig" />
+				<ref bean="quickJoinRoomUpMessageConfig" />
+				<ref bean="quickJoinRoomDownMessageConfig" />
+				<ref bean="kickOutUpMessageConfig" />
+				<ref bean="fightHeroUpMessageConfig" />
+				<ref bean="matchupOutTimeUpMessageConfig" />
+				<ref bean="getUserRoomUpMessageConfig" />
+				<ref bean="getUserRoomDownMessageConfig" />
+				<ref bean="getHeroInfoUpMessageConfig" />
+				<ref bean="getHeroInfoDownMessageConfig" />
+				<ref bean="useHeroBookUpMessageConfig" />
+				<ref bean="useHeroBookDownMessageConfig" />
+				<ref bean="callHeroUpMessageConfig" />
+				<ref bean="heroEvolutionUpMessageConfig" />
+				<ref bean="heroTrainUpMessageConfig" />
+				<ref bean="heroTrainDownMessageConfig" />
+				<ref bean="saveTrainPatienceUpMessageConfig" />
+				<ref bean="cancelTrainPatienceUpMessageConfig" />
+				<ref bean="getUserEconomyUpMessageConfig" />
+				<ref bean="getUserEconomyDownMessageConfig" />
+				<ref bean="exchangeMoneyUpMessageConfig" />
+				<ref bean="getEquipmentInfoUpMessageConfig" />
+				<ref bean="getEquipmentInfoDownMessageConfig" />
+				<ref bean="upgradeEquipmentLevelUpMessageConfig" />
+				<ref bean="upgradeEquipmentQualityUpMessageConfig" />
+				<ref bean="putonPluginUpMessageConfig" />
+				<ref bean="dischargePlugUpMessageConfig" />
+				<ref bean="refinePlugUpMessageConfig" />
+				<ref bean="refinePlugDownMessageConfig" />
+				<ref bean="getAllFormationInfoUpMessageConfig" />
+				<ref bean="getAllFormationInfoDownMessageConfig" />
+				<ref bean="getFormationDetailInfoUpMessageConfig" />
+				<ref bean="getFormationDetailInfoDownMessageConfig" />
+				<ref bean="setFormationUpMessageConfig" />
+				<ref bean="getVipinfoUpMessageConfig" />
+				<ref bean="getVipinfoDownMessageConfig" />
+				<ref bean="getMatchinfoUpMessageConfig" />
+				<ref bean="getMatchinfoDownMessageConfig" />
+				<ref bean="matchStartUpMessageConfig" />
+				<ref bean="matchOverUpMessageConfig" />
+				<ref bean="matchOverDownMessageConfig" />
+				<ref bean="matchMopupUpMessageConfig" />
+				<ref bean="matchMopupDownMessageConfig" />
+				<ref bean="buyGoodsUpMessageConfig" />
+				<ref bean="buyGoodsDownMessageConfig" />
+				<ref bean="buyPowerUpMessageConfig" />
+				<ref bean="resetMatchCountUpMessageConfig" />
+				<ref bean="getStarAwardUpMessageConfig" />
+				<ref bean="refreshMatchShopUpMessageConfig" />
+				<ref bean="refreshMatchShopDownMessageConfig" />
+				<ref bean="buyAllGoodsUpMessageConfig" />
+				<ref bean="buyAllGoodsDownMessageConfig" />
+				<ref bean="lErrorDownMessageConfig" />
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="messageHandler" class="com.cwa.message.ProBuffMessageHandler">
+	    <property name="messageConfigs" ref="messageConfigsList" />
+	</bean>
+	
+	<bean id="configMessage" class="com.cwa.message.ConfigMessage">
+	    <property name="messageConfigs" ref="messageConfigsList" />
+	</bean>
+</beans>

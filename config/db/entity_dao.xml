@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="singleThreadEngine" class="java.util.concurrent.Executors" factory-method="newSingleThreadExecutor" />
+	<!-- 引擎初始化 -->
+	<!-- 1、立即执行 -->
+	<!-- <bean id="asyncOperatePool" class="com.cwa.component.data.operate.pool.AsyncImmediatelyOperatePool"> -->
+	<!-- <property name="executor" ref="singleThreadEngine" /> -->
+	<!-- </bean> -->
+	<!--2、次数执行 -->
+	<!-- <bean id="asyncOperatePool" class="com.cwa.data.operate.pool.AsyncCountOperatePool"> -->
+	<!-- <property name="executor" ref="singleThreadEngine" /> -->
+	<!-- <property name="expectCount" value="3" /> -->
+	<!-- </bean> -->
+	<!--3、定时执行 -->
+	<bean id="asyncOperatePool" class="com.cwa.component.data.operate.pool.AsyncTimingOperaterPool">
+		<constructor-arg index="0" value="asyncOperatePool" />
+		<property name="executor" ref="singleThreadEngine" />
+	</bean>
+	<!--4、同步执行 -->
+    <bean id="syncOperatePool" class="com.cwa.component.data.operate.pool.SyncOperatePool" />
+	
+	<bean id="daoOperateFactory" class="com.cwa.component.data.operate.DaoOperateFactory" />
+
+    <!-- GeneralDao -->
+		<bean id="accountEntityGeneralDao" class="com.cwa.data.entity.general.AccountEntityGeneralDao" />
+	<bean id="accountcountEntityGeneralDao" class="com.cwa.data.entity.general.AccountcountEntityGeneralDao" />
+	<bean id="usereconomyEntityGeneralDao" class="com.cwa.data.entity.general.UsereconomyEntityGeneralDao" />
+	<bean id="equipmentEntityGeneralDao" class="com.cwa.data.entity.general.EquipmentEntityGeneralDao" />
+	<bean id="formationEntityGeneralDao" class="com.cwa.data.entity.general.FormationEntityGeneralDao" />
+	<bean id="heroEntityGeneralDao" class="com.cwa.data.entity.general.HeroEntityGeneralDao" />
+	<bean id="itemEntityGeneralDao" class="com.cwa.data.entity.general.ItemEntityGeneralDao" />
+	<bean id="matchEntityGeneralDao" class="com.cwa.data.entity.general.MatchEntityGeneralDao" />
+	<bean id="matchStarEntityGeneralDao" class="com.cwa.data.entity.general.MatchStarEntityGeneralDao" />
+	<bean id="matchMopupEntityGeneralDao" class="com.cwa.data.entity.general.MatchMopupEntityGeneralDao" />
+	<bean id="matchShopEntityGeneralDao" class="com.cwa.data.entity.general.MatchShopEntityGeneralDao" />
+	<bean id="matchConcealEntityGeneralDao" class="com.cwa.data.entity.general.MatchConcealEntityGeneralDao" />
+	<bean id="matchAwardEntityGeneralDao" class="com.cwa.data.entity.general.MatchAwardEntityGeneralDao" />
+	<bean id="regionEntityGeneralDao" class="com.cwa.data.entity.general.RegionEntityGeneralDao" />
+	<bean id="testUserEntityGeneralDao" class="com.cwa.data.entity.general.TestUserEntityGeneralDao" />
+	<bean id="userinfoEntityGeneralDao" class="com.cwa.data.entity.general.UserinfoEntityGeneralDao" />
+	<bean id="userattrEntityGeneralDao" class="com.cwa.data.entity.general.UserattrEntityGeneralDao" />
+	<bean id="vipEntityGeneralDao" class="com.cwa.data.entity.general.VipEntityGeneralDao" />
+
+
+    <!-- Dao -->
+	<bean id="accountEntityDao" class="com.cwa.data.entity.spread.AccountEntityDao" >
+		<property name="dao" ref="accountEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="accountcountEntityDao" class="com.cwa.data.entity.spread.AccountcountEntityDao" >
+		<property name="dao" ref="accountcountEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="usereconomyEntityDao" class="com.cwa.data.entity.spread.UsereconomyEntityDao" >
+		<property name="dao" ref="usereconomyEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="equipmentEntityDao" class="com.cwa.data.entity.spread.EquipmentEntityDao" >
+		<property name="dao" ref="equipmentEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="formationEntityDao" class="com.cwa.data.entity.spread.FormationEntityDao" >
+		<property name="dao" ref="formationEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="heroEntityDao" class="com.cwa.data.entity.spread.HeroEntityDao" >
+		<property name="dao" ref="heroEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="itemEntityDao" class="com.cwa.data.entity.spread.ItemEntityDao" >
+		<property name="dao" ref="itemEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchEntityDao" class="com.cwa.data.entity.spread.MatchEntityDao" >
+		<property name="dao" ref="matchEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchStarEntityDao" class="com.cwa.data.entity.spread.MatchStarEntityDao" >
+		<property name="dao" ref="matchStarEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchMopupEntityDao" class="com.cwa.data.entity.spread.MatchMopupEntityDao" >
+		<property name="dao" ref="matchMopupEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchShopEntityDao" class="com.cwa.data.entity.spread.MatchShopEntityDao" >
+		<property name="dao" ref="matchShopEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchConcealEntityDao" class="com.cwa.data.entity.spread.MatchConcealEntityDao" >
+		<property name="dao" ref="matchConcealEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="matchAwardEntityDao" class="com.cwa.data.entity.spread.MatchAwardEntityDao" >
+		<property name="dao" ref="matchAwardEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="regionEntityDao" class="com.cwa.data.entity.spread.RegionEntityDao" >
+		<property name="dao" ref="regionEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="testUserEntityDao" class="com.cwa.data.entity.spread.TestUserEntityDao" >
+		<property name="dao" ref="testUserEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="userinfoEntityDao" class="com.cwa.data.entity.spread.UserinfoEntityDao" >
+		<property name="dao" ref="userinfoEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="userattrEntityDao" class="com.cwa.data.entity.spread.UserattrEntityDao" >
+		<property name="dao" ref="userattrEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	<bean id="vipEntityDao" class="com.cwa.data.entity.spread.VipEntityDao" >
+		<property name="dao" ref="vipEntityGeneralDao" />
+		<property name="operatePool" ref="syncOperatePool" />
+		<property name="daoOperateFactory" ref="daoOperateFactory" />
+	</bean>	
+	
+    <!-- daoservice -->	
+	
+	<bean id="entityDaoMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="AccountEntity" value-ref="accountEntityDao" />
+				<entry key="AccountcountEntity" value-ref="accountcountEntityDao" />
+				<entry key="UsereconomyEntity" value-ref="usereconomyEntityDao" />
+				<entry key="EquipmentEntity" value-ref="equipmentEntityDao" />
+				<entry key="FormationEntity" value-ref="formationEntityDao" />
+				<entry key="HeroEntity" value-ref="heroEntityDao" />
+				<entry key="ItemEntity" value-ref="itemEntityDao" />
+				<entry key="MatchEntity" value-ref="matchEntityDao" />
+				<entry key="MatchStarEntity" value-ref="matchStarEntityDao" />
+				<entry key="MatchMopupEntity" value-ref="matchMopupEntityDao" />
+				<entry key="MatchShopEntity" value-ref="matchShopEntityDao" />
+				<entry key="MatchConcealEntity" value-ref="matchConcealEntityDao" />
+				<entry key="MatchAwardEntity" value-ref="matchAwardEntityDao" />
+				<entry key="RegionEntity" value-ref="regionEntityDao" />
+				<entry key="TestUserEntity" value-ref="testUserEntityDao" />
+				<entry key="UserinfoEntity" value-ref="userinfoEntityDao" />
+				<entry key="UserattrEntity" value-ref="userattrEntityDao" />
+				<entry key="VipEntity" value-ref="vipEntityDao" />
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>

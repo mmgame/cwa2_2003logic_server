@@ -1,0 +1,3 @@
+[{"desc":"有几率提升元素耐性","keyId":1,"maxraise":4,"maxreduce":-40,"moneyCount":20000,"moneyType":10000001,"name":"普通培养","random":5,"scale":30}, 
+{"desc":"有较高几率提升元素耐性","keyId":2,"maxraise":6,"maxreduce":-20,"moneyCount":50,"moneyType":10000003,"name":"高级培养","random":5,"scale":80}, 
+{"desc":"必定提升元素耐性","keyId":3,"maxraise":9,"maxreduce":5,"moneyCount":300,"moneyType":10000003,"name":"专家培养","random":4,"scale":150}]

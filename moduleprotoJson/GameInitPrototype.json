@@ -1,0 +1,6 @@
+[{"desc":"金币初始化(类型，数量)","initParamList":[100000000],"initSubType":10000001,"initType":10,"keyId":1}, 
+{"desc":"钻石初始化(类型，数量)","initParamList":[100000000],"initSubType":10000002,"initType":10,"keyId":2}, 
+{"desc":"道具初始化（id，数量）","initParamList":[100],"initSubType":2999999,"initType":2,"keyId":3}, 
+{"desc":"金券初始化(类型，数量)","initParamList":[10000000],"initSubType":10000003,"initType":10,"keyId":4}, 
+{"desc":"普通副本初始化（类型，关卡）","initParamList":[1001],"initSubType":1,"initType":15,"keyId":5}, 
+{"desc":"精英副本初始化（类型，关卡）","initParamList":[1003],"initSubType":2,"initType":15,"keyId":6}]

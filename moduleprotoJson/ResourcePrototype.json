@@ -1,0 +1,4 @@
+[{"desc":"金币通用货币","keyId":10000001,"name":"金币","resourceImage":"1_money.png"}, 
+{"desc":"钻石可以买高级物品","keyId":10000002,"name":"钻石","resourceImage":"2_money.png"}, 
+{"desc":"用来战斗","keyId":12000001,"name":"体力","resourceImage":"3_power.png"}, 
+{"desc":"升级","keyId":13000001,"name":"家园经验","resourceImage":"4_exp.png"}]

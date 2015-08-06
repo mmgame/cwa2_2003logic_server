@@ -1,0 +1,7 @@
+[{"buffOrDebuff":2,"damageAmountList":[350],"effectiveTime":5000,"incidentalBuffList":[0],"intervalTime":1000,"keyId":5010001,"type":1,"valueType":1}, 
+{"buffOrDebuff":2,"damageAmountList":[400],"effectiveTime":5000,"incidentalBuffList":[0],"intervalTime":1000,"keyId":5010002,"type":1,"valueType":1}, 
+{"buffOrDebuff":2,"damageAmountList":[600],"effectiveTime":5000,"incidentalBuffList":[0],"intervalTime":1000,"keyId":5010003,"type":1,"valueType":1}, 
+{"buffOrDebuff":2,"damageAmountList":[0],"effectiveTime":6000,"incidentalBuffList":[0],"intervalTime":1000,"keyId":5030001,"type":3,"valueType":2}, 
+{"buffOrDebuff":1,"damageAmountList":[200],"effectiveTime":9000,"incidentalBuffList":[0],"intervalTime":900,"keyId":5010004,"type":1,"valueType":1}, 
+{"buffOrDebuff":1,"damageAmountList":[250],"effectiveTime":9000,"incidentalBuffList":[0],"intervalTime":900,"keyId":5010005,"type":1,"valueType":1}, 
+{"buffOrDebuff":1,"damageAmountList":[300],"effectiveTime":9000,"incidentalBuffList":[0],"intervalTime":900,"keyId":5010006,"type":1,"valueType":1}]

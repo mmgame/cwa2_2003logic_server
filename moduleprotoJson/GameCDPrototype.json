@@ -1,0 +1,8 @@
+[{"cdHandlerType":2,"cdTime":3600,"describe":"体力回复cd","isSave":1,"keyId":1,"name":"体力回复cd","startTime":1}, 
+{"cdHandlerType":2,"cdTime":86400,"describe":"扫荡次数cd","isSave":1,"keyId":2,"name":"扫荡次数cd","startTime":1}, 
+{"cdHandlerType":2,"cdTime":86400,"describe":"挑战次数cd","isSave":1,"keyId":3,"name":"挑战次数cd","startTime":1}, 
+{"cdHandlerType":2,"cdTime":86400,"describe":"副本重置次数cd","isSave":1,"keyId":4,"name":"副本重置次数cd","startTime":1}, 
+{"cdHandlerType":2,"cdTime":86400,"describe":"购买体力次数cd","isSave":1,"keyId":5,"name":"购买体力次数cd","startTime":1}, 
+{"cdHandlerType":2,"cdTime":86400,"describe":"刷新商店次数cd","isSave":1,"keyId":6,"name":"刷新商店次数cd","startTime":1}, 
+{"cdHandlerType":1,"cdTime":3600,"describe":"隐藏关卡时间","isSave":1,"keyId":7,"name":"隐藏关卡时间","startTime":1}, 
+{"cdHandlerType":1,"cdTime":3600,"describe":"神秘商店时间","isSave":1,"keyId":8,"name":"神秘商店时间","startTime":1}]
